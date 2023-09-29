@@ -1,0 +1,25 @@
+.project {
+    width: 20rem;
+    height: 20rem;
+    background-color: #00000046;
+    border-radius: 2rem;
+    transition: all 0.2s;
+    padding: 3rem;
+    box-sizing: border-box;
+    color: var(--primary-color);
+
+    h3 {
+        font-size: 1.3rem;
+        margin-bottom: -0.3rem;
+        font-weight: 400;
+    }
+
+    img {
+        height: 8rem;
+    }
+}
+
+.project:hover {
+    cursor: pointer;
+    transform: translate3d(0, -1rem, 0);
+}
