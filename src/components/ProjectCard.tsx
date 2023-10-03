@@ -34,7 +34,9 @@ export default function ProjectCard(props: ProjectCardProps): JSXElement {
                 }}
             >
                 <div class='status-icon' />
-                <span>{props.project.status === 'active' ? 'Active' : 'On Hold'}</span>
+                <span>
+                    {props.project.status === 'active' ? 'Active' : 'On Hold'}
+                </span>
             </div>
         </div>
     );
