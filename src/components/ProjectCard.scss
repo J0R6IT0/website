@@ -1,7 +1,7 @@
 .project {
     width: 21rem;
     height: 21rem;
-    background-color: #00000046;
+    background-color: var(--transparent-color);
     border-radius: 2rem;
     transition: all 0.2s;
     padding: 2rem;
@@ -29,7 +29,7 @@
         transition: all 0.2s ease;
         border: none;
         background-color: var(--secondary-color);
-        background-color: #00000046;
+        background-color: var(--transparent-color);
         color: var(--primary-color);
         font-size: 1.1rem;
         padding: 1rem;

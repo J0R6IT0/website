@@ -1,7 +1,9 @@
 $--primary-color: --primary-color;
 $--secondary-color: --secondary-color;
+$--transparent-color: --transparent-color;
 
 $theme-map-default: (
     $--primary-color: white,
-    $--secondary-color: #242222
+    $--secondary-color: #242222,
+    $--transparent-color: #00000046,
 );
