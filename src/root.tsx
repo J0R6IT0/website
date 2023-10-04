@@ -20,6 +20,7 @@ export default function Root(): JSXElement {
                     name='viewport'
                     content='width=device-width, initial-scale=1'
                 />
+                <title>Jorge Pardo</title>
             </Head>
             <Body>
                 <ErrorBoundary>
