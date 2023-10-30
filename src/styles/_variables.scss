@@ -1,9 +1,13 @@
 $--primary-color: --primary-color;
 $--secondary-color: --secondary-color;
-$--transparent-color: --transparent-color;
+$--accent-color: --accent-color;
+$--text-color: --text-color;
+$--default-shadow: --default-shadow;
 
 $theme-map-default: (
-    $--primary-color: white,
-    $--secondary-color: #242222,
-    $--transparent-color: #00000046,
+    $--primary-color: #161616,
+    $--secondary-color: #1d1d1d,
+    $--accent-color: #DA0037,
+    $--text-color: #b4b4b4,
+    $--default-shadow: 0 0 0.5rem rgb(0 0 0 / 30%),
 );
