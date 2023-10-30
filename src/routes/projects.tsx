@@ -2,11 +2,11 @@ import './index.scss';
 import { type JSXElement } from 'solid-js';
 import Header from '~/components/Header';
 
-export default function Home(): JSXElement {
+export default function Projects(): JSXElement {
     return (
         <main>
-            <Header activePage='Home'/>
-            home
+            <Header activePage='Projects'/>
+            projects
         </main>
     );
 }
