@@ -11,13 +11,21 @@ import java from '../assets/icons/tech/java.svg';
 import mongodb from '../assets/icons/tech/mongodb.svg';
 
 const techs = [
-    { name: 'Rust', icon: rust },
-    { name: 'Java', icon: java },
-    { name: 'JavaScript', icon: javascript },
-    { name: 'TypeScript', icon: typescript },
-    { name: 'ReactJS', icon: reactjs },
-    { name: 'SolidJS', icon: solidjs },
-    { name: 'MongoDB', icon: mongodb },
+    { name: 'Rust', icon: rust, url: 'https://www.rust-lang.org' },
+    { name: 'Java', icon: java, url: 'https://www.java.com' },
+    {
+        name: 'JavaScript',
+        icon: javascript,
+        url: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    },
+    {
+        name: 'TypeScript',
+        icon: typescript,
+        url: 'https://www.typescriptlang.org',
+    },
+    { name: 'ReactJS', icon: reactjs, url: 'https://react.dev' },
+    { name: 'SolidJS', icon: solidjs, url: 'https://www.solidjs.com' },
+    { name: 'MongoDB', icon: mongodb, url: 'https://www.mongodb.com/' },
 ];
 
 export default function Home(): JSXElement {
@@ -34,10 +42,22 @@ export default function Home(): JSXElement {
             </div>
             <div id='carousel'>
                 <div id='carousel-slide'>
-                    <For each={techs}>{(tech) => <img src={tech.icon} />}</For>
+                    <For each={techs}>
+                        {(tech) => (
+                            <a href={tech.url} target='__blank'>
+                                <img src={tech.icon} />
+                            </a>
+                        )}
+                    </For>
                 </div>
                 <div id='carousel-slide'>
-                    <For each={techs}>{(tech) => <img src={tech.icon} />}</For>
+                    <For each={techs}>
+                        {(tech) => (
+                            <a href={tech.url} target='__blank'>
+                                <img src={tech.icon} />
+                            </a>
+                        )}
+                    </For>
                 </div>
             </div>
         </main>
