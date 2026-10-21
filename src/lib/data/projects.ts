@@ -80,9 +80,9 @@ const entries: ProjectEntry[] = [
 		]
 	},
 	{
-		slug: 'portfolio',
-		name: 'Portfolio',
-		repo: 'J0R6IT0/portfolio',
+		slug: 'website',
+		name: 'Website',
+		repo: 'J0R6IT0/website',
 		tech: ['typescript', 'svelte'],
 		summary: 'This website!',
 		tags: ['Portfolio', 'Web'],
@@ -90,8 +90,8 @@ const entries: ProjectEntry[] = [
 		description: ['That`s pretty much it, nothing special really...'],
 		notes: [],
 		links: [
-			{ label: 'Repository', href: 'https://github.com/J0R6IT0/portfolio' },
-			{ label: 'Releases', href: 'https://github.com/J0R6IT0/portfolio/releases' }
+			{ label: 'Repository', href: 'https://github.com/J0R6IT0/website' },
+			{ label: 'Releases', href: 'https://github.com/J0R6IT0/website/releases' }
 		]
 	}
 ];
