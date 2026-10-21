@@ -1,4 +1,4 @@
-import { setGlobalProxyFromEnv } from 'node:http';
+import * as http from 'node:http';
 import { GITHUB_TOKEN } from '$app/env/private';
 import { projects } from '#lib/data/projects.js';
 
@@ -7,7 +7,7 @@ export type Stars = Record<string, number>;
 const DAY = 24 * 60 * 60 * 1000;
 const RETRY = 10 * 60 * 1000;
 
-if (process.env.HTTPS_PROXY || process.env.https_proxy) setGlobalProxyFromEnv();
+if (process.env.HTTPS_PROXY || process.env.https_proxy) http.setGlobalProxyFromEnv?.();
 
 let cached: { until: number; stars: Promise<Stars> } | undefined;
 
