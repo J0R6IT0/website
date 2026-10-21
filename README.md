@@ -1,4 +1,4 @@
-# Portfolio
+# jparpar.com
 
 My personal site. SvelteKit, fully prerendered with `@sveltejs/adapter-static`.
 
