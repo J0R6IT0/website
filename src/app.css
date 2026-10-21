@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--color-drawer: #2d2b2b;
+	--color-drawer-tab: #363434;
+	--color-drawer-rule: #4b4949;
+	--color-on-drawer: #eeedeb;
+	--color-on-drawer-muted: #aaa9a6;
+
+	--color-card: #eeedea;
+	--color-card-rule: #d3d1cd;
+	--color-card-margin: #9a9a97;
+	--color-ink: #1f1e1e;
+	--color-ink-muted: #5b5a57;
+
+	--font-sans: 'Public Sans Variable', system-ui, sans-serif;
+	--font-mono: ui-monospace, 'Cascadia Code', Menlo, Consolas, monospace;
+
+	--text-label: 0.75rem;
+	--text-small: 0.875rem;
+	--text-body: 1.0625rem;
+	--text-body--line-height: 1.6;
+	--text-lead: 1.1875rem;
+	--text-lead--line-height: 1.5;
+	--text-title: 1.5rem;
+	--text-title--line-height: 1.2;
+
+	--tracking-label: 0.16em;
+	--tracking-call: 0.08em;
+	--tracking-name: 0.28em;
+
+	--container-column: 50rem;
+
+	--shadow-stock: 0 1px 0 rgb(0 0 0 / 0.35), 0 12px 28px -18px rgb(0 0 0 / 0.7);
+
+	--ease-drawer: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@layer base {
+	:root {
+		color-scheme: dark;
+		scrollbar-color: var(--color-drawer-rule) var(--color-drawer);
+	}
+
+	html {
+		background: var(--color-drawer);
+		scrollbar-gutter: stable;
+	}
+
+	body {
+		@apply min-h-svh bg-drawer font-sans text-body text-on-drawer antialiased;
+		font-kerning: normal;
+	}
+
+	::selection {
+		background: var(--color-on-drawer);
+		color: var(--color-drawer);
+	}
+
+	:focus-visible {
+		outline: 2px solid var(--color-on-drawer);
+		outline-offset: 3px;
+	}
+}
+
+@utility stock {
+	@apply rounded-[3px] bg-card text-ink shadow-stock;
+
+	& ::selection {
+		background: var(--color-ink);
+		color: var(--color-card);
+	}
+
+	& :focus-visible {
+		outline-color: var(--color-ink);
+	}
+}
+
+@utility caps {
+	@apply text-label font-semibold tracking-label uppercase;
+}
+
+@utility stamp {
+	@apply rounded-xs border border-current px-2 pt-0.75 pb-0.5 caps whitespace-nowrap;
+}
+
+@utility ink-link {
+	@apply inline-flex items-center gap-1.5 py-1 font-semibold text-ink underline decoration-card-margin decoration-1 underline-offset-[0.25em] transition-[text-decoration-color] duration-150 ease-drawer hover:decoration-ink;
+}
+
+@utility prose-card {
+	--tw-prose-body: var(--color-ink);
+	--tw-prose-headings: var(--color-ink);
+	--tw-prose-lead: var(--color-ink-muted);
+	--tw-prose-links: var(--color-ink);
+	--tw-prose-bold: var(--color-ink);
+	--tw-prose-counters: var(--color-ink-muted);
+	--tw-prose-bullets: var(--color-card-margin);
+	--tw-prose-hr: var(--color-card-rule);
+	--tw-prose-quotes: var(--color-ink-muted);
+	--tw-prose-quote-borders: var(--color-card-margin);
+	--tw-prose-code: var(--color-ink);
+	--tw-prose-pre-code: var(--color-on-drawer);
+	--tw-prose-pre-bg: var(--color-drawer);
+	font-size: var(--text-body);
+	line-height: 1.7;
+
+	& :where(h2, h3) {
+		font-weight: 650;
+		text-wrap: balance;
+	}
+
+	& a {
+		font-weight: 500;
+		text-decoration-color: var(--color-card-margin);
+		text-underline-offset: 0.2em;
+	}
+
+	& a:hover {
+		text-decoration-color: var(--color-ink);
+	}
+
+	& :not(pre) > code {
+		padding: 0.1em 0.35em;
+		border-radius: 2px;
+		background: color-mix(in srgb, var(--color-ink) 7%, transparent);
+		font-weight: 500;
+	}
+
+	& :not(pre) > code::before,
+	& :not(pre) > code::after {
+		content: none;
+	}
+
+	& pre {
+		border-radius: 3px;
+		scrollbar-color: var(--color-drawer-rule) var(--color-drawer);
+	}
+
+	& pre ::selection {
+		background: var(--color-on-drawer);
+		color: var(--color-drawer);
+	}
+
+	& blockquote {
+		font-style: normal;
+		font-weight: 400;
+	}
+
+	& blockquote p::before,
+	& blockquote p::after {
+		content: none;
+	}
+}
+
+::view-transition-group(*) {
+	animation-duration: 320ms;
+	animation-timing-function: var(--ease-drawer);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+	animation-duration: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after,
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+		transition: none !important;
+	}
+}
